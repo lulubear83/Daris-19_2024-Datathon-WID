@@ -1,0 +1,136 @@
+import pandas as pd
+from textblob import TextBlob
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load your CSV file
+# Load your CSV file
+# Make sure the file path is correct or replace with the actual path to your CSV file
+df = pd.read_csv('Final1331_Interview Question.csv', header=0)
+df.head()
+
+# Display the first few rows of the dataframe
+print(df.head(5))
+
+# Count the total number of rows and columns
+rows, columns = df.shape
+print(f"Total Rows: {rows}")
+print(f"Total Columns: {columns}")
+
+# Step 2: Define the Sentiment Analysis Function
+def analyze_sentiment(response):
+    analysis = TextBlob(response)
+    if analysis.sentiment.polarity > 0:
+        return 2  # Positive
+    elif analysis.sentiment.polarity == 0:
+        return 1  # Neutral
+    else:
+        return 0  # Negative
+
+# Step 3: Apply the function to create a new column 'Predicted'
+# Assuming the text responses are in a column named 'Response'
+df['Predicted'] = df['Response'].apply(analyze_sentiment)
+
+# Step 4: Display the first few rows of the updated DataFrame
+print(df[['Response', 'Actual', 'Predicted']].head())  # Show the first 5 rows by default
+
+# Optionally, save the updated DataFrame to a new CSV file
+df.to_csv('updated1331_sentiment_results.csv', index=False)
+
+## Sentiment Analysis
+#DATA VISUALIZATION
+# Display the dataframe to check sentiment predictions
+print("Dataframe with Sentiment Predictions:")
+print(df.head(5))
+
+# Count the total number of rows and columns (Predicted Sentiment)
+rows, columns = df.shape
+print(f"Total Rows: {rows}")
+print(f"Total Columns: {columns}")
+
+# Display unique values and their counts in the 'Actual' column
+actual_counts = df['Actual'].value_counts()
+print(actual_counts)
+
+# Step 3: Actual and Predicted Distribution
+plt.figure(figsize=(12, 6))
+
+# Subplot for Actual Sentiment
+plt.subplot(1, 2, 1)  # 1 row, 2 columns, first subplot
+ax_actual = sns.countplot(x='Actual', data=df, palette='coolwarm')
+plt.title('Distribution of Actual Sentiment Labels')
+plt.xlabel('Sentiment Label (Negative=0, Neutral=1, Positive=2)')
+plt.ylabel('Count')
+
+# Adding count labels on top of each bar for Actual Sentiment
+for p in ax_actual.patches:
+    ax_actual.annotate(f'{int(p.get_height())}', 
+                       (p.get_x() + p.get_width() / 2., p.get_height()), 
+                       ha='center', 
+                       va='bottom')  # va='bottom' to place the text above the bar
+
+# Subplot for Predicted Sentiment
+plt.subplot(1, 2, 2)  # 1 row, 2 columns, second subplot
+ax_predicted = sns.countplot(x='Predicted', data=df, palette='coolwarm')
+plt.title('Distribution of Predicted Sentiment Labels')
+plt.xlabel('Sentiment Label (Negative=0, Neutral=1, Positive=2)')
+plt.ylabel('Count')
+
+# Adding count labels on top of each bar for Predicted Sentiment
+for p in ax_predicted.patches:
+    ax_predicted.annotate(f'{int(p.get_height())}', 
+                          (p.get_x() + p.get_width() / 2., p.get_height()), 
+                          ha='center', 
+                          va='bottom')  # va='bottom' to place the text above the bar
+
+plt.tight_layout()  # Adjust layout to prevent overlap
+plt.show()
+
+# Display the columns in the DataFrame
+print(df.columns)
+
+# Step: Pie chart for sentiment distribution using the 'Actual' and 'Predicted' columns
+sentiment_counts_actual = df['Actual'].value_counts()
+sentiment_counts_predicted = df['Predicted'].value_counts()
+
+plt.figure(figsize=(14, 7))
+
+# Pie chart for Actual Sentiment
+plt.subplot(1, 2, 1)  # 1 row, 2 columns, first subplot
+plt.pie(sentiment_counts_actual, labels=sentiment_counts_actual.index, autopct='%1.1f%%', colors=['#ff9999', '#66b3ff', '#99ff99'])
+plt.title('Overall Actual Sentiment Distribution')
+
+# Pie chart for Predicted Sentiment
+plt.subplot(1, 2, 2)  # 1 row, 2 columns, second subplot
+plt.pie(sentiment_counts_predicted, labels=sentiment_counts_predicted.index, autopct='%1.1f%%', colors=['#ff9999', '#66b3ff', '#99ff99'])
+plt.title('Overall Predicted Sentiment Distribution')
+
+plt.tight_layout()  # Adjust layout to prevent overlap
+plt.show()
+
+# Assuming y_true and y_pred are defined, and labels are set correctly
+y_true = df['Actual']  # True labels
+y_pred = df['Predicted']  # Predicted labels
+labels = ['Negative', 'Neutral', 'Positive']  # Class names
+
+# Classification report for detailed evaluation
+print("\nClassification Report:")
+print(classification_report(y_true, y_pred, target_names=labels))
+
+# Assuming y_true and y_pred are already defined
+y_true = df['Actual']  # True labels
+y_pred = df['Predicted']  # Predicted labels
+
+# Create confusion matrix with numerical labels
+cm = confusion_matrix(y_true, y_pred, labels=[0, 1, 2])
+
+# Create a DataFrame for better visualization
+cm_df = pd.DataFrame(cm, index=['Negative (0)', 'Neutral (1)', 'Positive (2)'], columns=['Negative (0)', 'Neutral (1)', 'Positive (2)'])
+
+# Plot the confusion matrix
+plt.figure(figsize=(8, 6))
+sns.heatmap(cm_df, annot=True, fmt='d', cmap='Blues')
+plt.title('Confusion Matrix')
+plt.ylabel('Actual')TextBlob Test Phase_1300
+plt.xlabel('Predicted')
+plt.show()
