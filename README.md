@@ -24,8 +24,12 @@ Deadline
 
 ## Deliverables
 
-* Playbook - Best Practices, Recommendations, and Risk Mitigation Strategies
-* Video Presentation (5 mins)
+[* Playbook - Best Practices and Recommendations
+](https://docs.google.com/presentation/d/e/2PACX-1vSCMiRz8vomVZv5MLzl-2QUXAYuiuUJ6eLJLKrAjlTNwhP64JpVQB_vPCRgvReKJw/pub?start=false&loop=false&delayms=3000&slide=id.p1)
+
+[* Video Presentation (5 mins)
+](https://drive.google.com/file/d/1BnvAsGaorAavDAwiwwH5_YTesuLSigaL/view?usp=drive_link)
+
 * Click here to review the [2024 Datathon Toolkit](https://docs.google.com/presentation/d/1V8S6fvAkrXuoLqkVsRMGzrlr3eT8o3zS/embed?slide=id.p1)
 
 ## Action Items
