@@ -4,11 +4,16 @@ Deadline
 * Deadline: October 11 at 8:00 PM ET
 
 ## Team DARIS-19
-* Delia Green
-* Adina Kanapina
-* Raveeja Deshpande
-* Iraivel Villar
-* Sherline Herold
+* [Delia Green](https://www.linkedin.com/in/delia-green-mbs-a442b734/)
+
+* [Adina Kanapina](https://www.linkedin.com/in/adina-kanapina/)
+
+* [Raveeja Deshpande](http://linkedin.com/in/raveejadeshpande) 
+
+* [Iraivel Villar](https://www.linkedin.com/in/ira-vi/)
+
+* [Sherline Herold](https://www.linkedin.com/in/herolds/)
+
 
 ## Judging Criteria:
 
@@ -21,6 +26,7 @@ Deadline
 
 * Playbook - Best Practices, Recommendations, and Risk Mitigation Strategies
 * Video Presentation (5 mins)
+* Click here to review the [2024 Datathon Toolkit](https://docs.google.com/presentation/d/1V8S6fvAkrXuoLqkVsRMGzrlr3eT8o3zS/embed?slide=id.p1)
 
 ## Action Items
 1. 1.0 Test Various GenAI Systems
@@ -39,5 +45,3 @@ Deadline
 14. 4.2 FINALIZE a playbook - Best Practices, Recommendations when using the App, and Risk Mitigation Strategies
 15. 4.3 Develop a presentation
 16. 4.4 Record and Edit the final presentation
-
-[2024 Datathon Toolkit https://docs.google.com/presentation/d/1V8S6fvAkrXuoLqkVsRMGzrlr3eT8o3zS/embed?slide=id.p1]
