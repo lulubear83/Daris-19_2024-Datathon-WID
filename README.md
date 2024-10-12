@@ -25,7 +25,7 @@ Deadline
 ## Deliverables
 
 [* Playbook - Best Practices and Recommendations
-https://www.canva.com/design/DAGSF_8Ahow/U8qGFJQywFBG0pHGXRC14A/view?utm_content=DAGSF_8Ahow&utm_campaign=designshare&utm_medium=link&utm_source=editor
+](https://www.canva.com/design/DAGSF_8Ahow/U8qGFJQywFBG0pHGXRC14A/view?utm_content=DAGSF_8Ahow&utm_campaign=designshare&utm_medium=link&utm_source=editor)
 
 [* Video Presentation (5 mins)
 ](https://drive.google.com/file/d/1BnvAsGaorAavDAwiwwH5_YTesuLSigaL/view?usp=drive_link)
